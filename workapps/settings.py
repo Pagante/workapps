@@ -21,12 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'k4s2#v6d$e93p$)*_1t1lv$v$rg_4d^q^l+2o%v-)fwvamx7@a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['workbookpro-env.eba-umsmxq4q.us-west-2.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
@@ -143,9 +143,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 #SMTP CONFIGURATION
 EMAIL_BACKEND= config('EMAIL_BACKEND')
 
-EMAIL_HOST = config('EMAIL_HOST', default='localhost')
-EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='meshlrd14@gmail.com'
+EMAIL_HOST_PASSWORD='Happyzone23@@'
+EMAIL_USE_TLS=True
 
